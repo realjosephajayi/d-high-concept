@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>D-High Concept — Train High. Work Higher.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--bg2:#f3f5fa;--ink:#0b1f44;--mute:#4a5570;--line:#d9deea;--navy:#0b1f44;--onnavy:#fff;--gold:#c9a227;--gold-ink:#7a5f00;--ok-bg:#e1f3e4;--ok:#1f6a32;--mid-bg:#fdebd2;--mid:#8a4b08;--shadow:0 1px 0 rgba(11,31,68,.06);
+color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a1426;--bg2:#101c34;--ink:#eef1f8;--mute:#aab4cc;--line:#25324f;--navy:#13244a;--gold:#e0b93c;--gold-ink:#e0b93c;--ok-bg:#183a25;--ok:#8fdba3;--mid-bg:#42290d;--mid:#f5c98a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0a1426;--bg2:#101c34;--ink:#eef1f8;--mute:#aab4cc;--line:#25324f;--navy:#13244a;--gold:#e0b93c;--gold-ink:#e0b93c;--ok-bg:#183a25;--ok:#8fdba3;--mid-bg:#42290d;--mid:#f5c98a;color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Figtree,system-ui,-apple-system,"Segoe UI",sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque",Figtree,system-ui,sans-serif;line-height:1.1;margin:0;letter-spacing:-.02em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+section{padding:72px 0}
+.btn{display:inline-block;background:var(--gold);color:#0b1f44;font-weight:600;text-decoration:none;padding:14px 24px;border-radius:8px;border:0;font-size:1rem;cursor:pointer}
+.btn:hover{filter:brightness(1.08)}
+.btn.ghost{background:transparent;color:var(--onnavy);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.45)}
+header{position:sticky;top:0;z-index:20;background:var(--navy);color:var(--onnavy)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--navy);z-index:30}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:800 1.25rem "Bricolage Grotesque",sans-serif;text-decoration:none;letter-spacing:-.02em}
+.logo b{color:var(--gold)}
+nav{display:flex;gap:22px;align-items:center;font-size:.95rem}
+nav a{text-decoration:none;opacity:.9}
+nav a:hover{opacity:1;color:var(--gold)}
+nav .btn{padding:8px 16px;font-size:.9rem;color:#0b1f44;opacity:1}
+nav .btn:hover{color:#0b1f44}
+@media(max-width:700px){nav a:not(.btn){display:none}}
+.hero{background:var(--navy);color:var(--onnavy);padding:72px 0 0;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:end}
+.hero h1{font-size:clamp(2.6rem,7vw,5rem);font-weight:800}
+.hero h1 span{display:block;color:var(--gold)}
+.hero p{max-width:34em;font-size:1.15rem;color:#d5dcee;margin:22px 0 30px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.ladder{display:flex;flex-direction:column;gap:0;align-self:end;padding-bottom:0}
+.rung{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 18px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-bottom:0;font-weight:600}
+.rung:nth-child(1){margin-left:0}.rung:nth-child(2){margin-left:18px}.rung:nth-child(3){margin-left:36px}.rung:nth-child(4){margin-left:54px}
+.rung small{font-weight:500;color:var(--gold);font-size:.8rem}
+.rung:first-child{border-radius:10px 10px 0 0}
+.stats{background:var(--gold);color:#0b1f44}
+.stats .wrap{display:flex;flex-wrap:wrap;justify-content:center;text-align:center;gap:12px 56px;padding-top:22px;padding-bottom:22px;font-weight:600}
+.stats strong{font:800 1.6rem "Bricolage Grotesque",sans-serif;margin-right:8px}
+@media(max-width:800px){.hero .wrap{grid-template-columns:1fr}.rung{margin-left:0!important}.hero{padding-top:48px}.ladder{margin-top:8px}}
+h2{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:12px}
+.lede{color:var(--mute);max-width:40em;margin:0 0 32px}
+.tabs{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.tabs button{font:600 .95rem Figtree,sans-serif;padding:9px 18px;border-radius:999px;border:1.5px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--navy);color:var(--onnavy);border-color:var(--navy)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,310px),1fr));gap:18px;align-items:stretch}
+.course{border:1px solid var(--line);border-radius:12px;padding:22px;background:var(--bg)}
+.course[hidden]{display:none}
+.tag{display:inline-block;font-size:.78rem;font-weight:600;padding:3px 10px;border-radius:999px;margin-bottom:12px}
+.tag.b{background:var(--ok-bg);color:var(--ok)}.tag.i{background:var(--mid-bg);color:var(--mid)}
+.course h3{font-size:1.3rem;margin-bottom:6px}
+.tools{color:var(--mute);font-size:.92rem;margin:0 0 12px}
+.course p.out{margin:0 0 14px;font-size:.98rem}
+details{border-top:1px solid var(--line);padding-top:12px}
+summary{cursor:pointer;font-weight:600;color:var(--gold-ink)}
+details ul{margin:12px 0 4px;padding-left:20px;color:var(--mute);font-size:.95rem}
+details li{margin-bottom:6px}
+details li.grp{list-style:none;margin:16px 0 8px -20px;color:var(--ink);font-weight:600;font-size:.78rem;text-transform:uppercase;letter-spacing:.07em}
+.alt{background:var(--bg2)}
+.c{text-align:center}.lede.c{margin-left:auto;margin-right:auto}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);counter-reset:s;max-width:980px;margin:48px auto 0}
+.step{text-align:center;padding:8px 36px}
+.step+.step{border-left:1.5px solid var(--line)}
+.step::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:58px;height:58px;border-radius:50%;background:var(--navy);color:var(--gold);border:2px solid var(--gold);font:800 1.4rem "Bricolage Grotesque",sans-serif;margin:0 auto 20px}
+.step h3{font-size:1.25rem;margin-bottom:10px}.step p{margin:0 auto;color:var(--mute);max-width:26em;font-size:.98rem}
+@media(max-width:800px){.steps{grid-template-columns:1fr}.step+.step{border-left:0;border-top:1.5px solid var(--line);margin-top:28px;padding-top:32px}}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:0;text-align:center;max-width:980px;margin:0 auto}
+.split>div{padding:8px 48px}
+.split>div+div{border-left:1.5px solid var(--line)}
+@media(max-width:800px){.split{grid-template-columns:1fr}.split>div{padding:8px 0}.split>div+div{border-left:0;border-top:1.5px solid var(--line);margin-top:32px;padding-top:36px}}
+.split p{color:var(--mute);margin:0 auto 14px;max-width:30em}
+.vision{font:600 1.35rem/1.35 "Bricolage Grotesque",sans-serif;letter-spacing:-.01em;color:var(--ink)!important}
+.why{display:grid;grid-template-columns:repeat(4,1fr);max-width:1040px;margin:48px auto 0}
+.why>div{text-align:center;padding:8px 28px}
+.why>div+div{border-left:1.5px solid var(--line)}
+.why i{display:grid;place-items:center;width:58px;height:58px;border-radius:50%;background:var(--navy);color:var(--gold);border:2px solid var(--gold);margin:0 auto 20px}
+.why i svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.why h3{font-size:1.2rem;margin-bottom:10px}.why p{margin:0 auto;color:var(--mute);font-size:.98rem;max-width:26em}
+@media(max-width:900px){.why{grid-template-columns:1fr;max-width:560px}.why>div+div{border-left:0;border-top:1.5px solid var(--line);margin-top:28px;padding-top:32px}}
+.enroll{background:var(--navy);color:var(--onnavy);text-align:center}
+.enroll p{color:#d5dcee;max-width:34em;margin:0 auto 26px}
+.enroll .cta{justify-content:center}
+footer{background:var(--navy);color:#aab4cc;border-top:1px solid rgba(255,255,255,.12);padding:26px 0;font-size:.92rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+footer b{color:var(--gold)}
+.ask{display:inline-block;margin-top:14px;font-weight:600;font-size:.95rem;color:var(--gold-ink);text-decoration:none;border-bottom:1.5px solid currentColor}
+.ask:hover{opacity:.8}
+.btn.wa{background:#25d366;color:#06361a;display:inline-flex;align-items:center;gap:10px}
+.btn.wa svg{width:20px;height:20px;fill:currentColor}
+.float-wa{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:25;box-shadow:0 6px 18px rgba(0,0,0,.28);border-radius:999px;padding:12px 18px}
+.note{font-size:.95rem;color:#aab4cc;margin-top:16px}
+.faq{max-width:760px;margin:32px auto 0;border-top:1px solid var(--line)}
+.faq details{border:0;border-bottom:1px solid var(--line);padding:0}
+.faq summary{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;color:var(--ink);font:700 1.1rem "Bricolage Grotesque",Figtree,sans-serif;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:1.6rem;font-weight:500;color:var(--gold-ink);line-height:1}
+.faq details[open] summary::after{content:"\2212"}
+.faq details p{margin:0 0 20px;color:var(--mute);max-width:40em}
+@media(max-width:700px){
+body{font-size:16px;overflow-wrap:break-word}
+section{padding:52px 0}
+.wrap{padding:0 18px}
+header .wrap{height:56px}
+.logo{font-size:1.15rem}
+nav .btn{padding:8px 14px}
+.hero{padding-top:40px}
+.hero h1{font-size:clamp(2.2rem,11vw,3rem)}
+.hero p{font-size:1.05rem;margin:18px 0 24px}
+.hero .wrap>div:first-child>div[style]{height:28px!important}
+.cta{flex-direction:column}
+.cta .btn{text-align:center;width:100%}
+.ladder{margin-top:0}
+.rung{flex-direction:column;align-items:flex-start;gap:2px;padding:14px 16px}
+.stats .wrap{display:grid;grid-template-columns:1fr 1fr;gap:16px 12px;padding-top:20px;padding-bottom:20px;font-size:.9rem;line-height:1.3}
+.stats strong{display:block;margin:0 0 2px;font-size:1.45rem}
+h2{font-size:1.75rem}
+.lede{font-size:.98rem;margin-bottom:24px}
+.tabs{gap:6px}.tabs button{font-size:.85rem;padding:8px 13px}
+.grid{gap:14px}
+.course{padding:18px}
+.course h3{font-size:1.2rem}
+details ul{font-size:.93rem}
+.steps{margin-top:32px}.step{padding:8px 4px}
+.why{margin-top:32px}.why>div{padding:8px 4px}
+.split>div{padding:8px 0}
+.vision{font-size:1.2rem}
+.faq summary{font-size:1.02rem;padding:18px 0}
+.enroll p{font-size:1rem}
+footer .wrap{flex-direction:column;text-align:center;align-items:center}
+.float-wa{font-size:0;gap:0;padding:14px;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px))}
+.float-wa svg{width:26px;height:26px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<a class="logo" href="#top">D-High <b>Concept</b></a>
+<nav aria-label="Main"><a href="#courses">Courses</a><a href="#how">How it works</a><a href="#about">About</a><a href="#faq">FAQ</a><a class="btn" href="https://wa.me/2348166122682?text=Hello%20D-High%20Concept%2C%20I%27d%20like%20to%20enroll." target="_blank" rel="noopener">Enroll</a></nav>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+<div>
+<h1>Learn a digital skill <span>that pays.</span></h1>
+<p>No matter your starting point. From graphic design to web development, build real, portfolio-ready skills in 4 weeks, on your phone or your laptop.</p>
+<div class="cta"><a class="btn" href="#courses">Browse courses</a><a class="btn ghost" href="#how">See how it works</a></div>
+<div style="height:48px"></div>
+</div>
+<div class="ladder" aria-label="Course levels">
+<div class="rung">Graphic design <small>Beginner friendly</small></div>
+<div class="rung">Social media management <small>Beginner friendly</small></div>
+<div class="rung">AI generation <small>Intermediate</small></div>
+<div class="rung">Web development <small>Intermediate</small></div>
+</div>
+</div>
+<div class="stats"><div class="wrap">
+<span><strong>100+</strong>people already trained</span><span><strong>4 weeks</strong>per course</span><span><strong>6</strong>programs</span><span><strong>1:1</strong>mentorship</span>
+</div></div>
+</div>
+
+<section id="courses"><div class="wrap">
+<h2 class="c">Pick a course</h2>
+<p class="lede c">Every program is built around one outcome: real, demonstrable skill by the end. Not sure where to begin? Start with a Beginner friendly course.</p>
+<div class="tabs" role="group" aria-label="Filter by level">
+<button aria-pressed="true" data-f="all">All courses</button>
+<button aria-pressed="false" data-f="b">Beginner friendly</button>
+<button aria-pressed="false" data-f="i">Intermediate</button>
+</div>
+<div class="grid">
+
+<article class="course" data-l="b"><span class="tag b">Beginner friendly</span>
+<h3>Graphic Design</h3><p class="tools">CorelDRAW &amp; Photoshop</p>
+<p class="out">Design classy, client-ready graphics by combining both tools in one workflow.</p>
+<details><summary>What you'll learn</summary><ul>
+<li>How to use different tools in CorelDRAW and Photoshop</li>
+<li>How to design classy and professional graphics using both tools</li>
+<li>How to utilize vector shapes for logos and graphics in CorelDRAW</li>
+<li>How to master photo editing, retouching, and manipulation in Photoshop</li>
+<li>How to use the interface, tools, basic shapes, effects, artistic media, and text in CorelDRAW</li>
+<li>How to work with layers, masks, and blending modes in Photoshop</li>
+<li>How to distort and apply drop shadow and 3D effects to objects</li>
+<li>How to design various kinds of certificates and identity cards (ID cards)</li>
+<li>How to create and design beautiful wedding cards, logos, banners, and flyers</li>
+<li>How to combine CorelDRAW and Photoshop in one workflow to produce complete, client-ready designs</li></ul></details></article>
+
+<article class="course" data-l="i"><span class="tag i">Intermediate</span>
+<h3>Graphic Design with AI</h3><p class="tools">ChatGPT &amp; Gemini</p>
+<p class="out">Turn prompts into professional graphics, then refine them with your own creative direction.</p>
+<details><summary>What you'll learn</summary><ul>
+<li>How to use ChatGPT and Gemini for AI-powered graphic design</li>
+<li>How to write effective prompts to generate professional-quality graphics</li>
+<li>How to generate logos, flyers, and social media graphics using AI</li>
+<li>How to use ChatGPT and Gemini to edit, refine, and adjust AI-generated images</li>
+<li>How to generate design concepts and mockups for branding projects</li>
+<li>How to use AI to create certificates, ID card designs, and banners</li>
+<li>How to combine AI-generated visuals with your own creative direction for a polished result</li>
+<li>How to use ChatGPT for design copywriting (taglines, captions, brand messaging)</li>
+<li>How to troubleshoot and refine AI outputs that don't match your vision</li>
+<li>How to build a complete AI-assisted design workflow from concept to final delivery</li></ul></details></article>
+
+<article class="course" data-l="b"><span class="tag b">Beginner friendly</span>
+<h3>Video Editing &amp; Content Creation</h3><p class="tools">CapCut</p>
+<p class="out">Plan, shoot and edit content that hooks viewers in the first 3 seconds.</p>
+<details><summary>What you'll learn</summary><ul>
+<li>Master CapCut's mobile interface for trimming, cutting, and organizing footage</li>
+<li>Plan and structure content that hooks viewers in the first 3 seconds, from idea to final cut</li>
+<li>Work with layers, text, subtitles, and auto captions</li>
+<li>Apply keyframes and basic color correction for smooth visuals</li>
+<li>Add and balance background music, sound effects, and voiceovers</li>
+<li>Use noise reduction and audio extraction for clean sound</li>
+<li>Create cinematic transitions, zooms, lighting effects, and trend-based edits for social media</li>
+<li>Perform VFX tricks like cloning, background swaps, and motion illusions</li>
+<li>Build editing confidence and a content creation portfolio through hands-on projects and challenges</li></ul></details></article>
+
+<article class="course" data-l="b"><span class="tag b">Beginner friendly</span>
+<h3>Social Media Management</h3><p class="tools">YouTube-focused</p>
+<p class="out">Understand the algorithm, grow an audience and protect your channel.</p>
+<details><summary>What you'll learn</summary><ul>
+<li class="grp">Foundations</li>
+<li>Understanding Social Media</li>
+<li>Understanding the Algorithm</li>
+<li>YouTube Fundamentals</li>
+<li>YouTube Setup on Studio YouTube</li>
+<li>Different YouTube Niches</li>
+<li class="grp">Growth &amp; Visibility</li>
+<li>Understanding Search Engine Optimization</li>
+<li>Understanding How Hashtags Work</li>
+<li>Thumbnail Creation</li>
+<li>YouTube Growth and Monetization</li>
+<li>Knowledge Monetization</li>
+<li class="grp">Rules, Copyright &amp; Protection</li>
+<li>YouTube Rules and Guidelines</li>
+<li>Understanding Reused Content, Copyright, and Copyright Strikes</li>
+<li>How to Identify Who Issued a Strike</li>
+<li>Video Editing (one of the ways to avoid reused content issues)</li></ul></details></article>
+
+<article class="course" data-l="i"><span class="tag i">Intermediate</span>
+<h3>Data Analysis</h3><p class="tools">Excel, Power BI</p>
+<p class="out">Clean, analyze and present data so anyone can act on it.</p>
+<details><summary>What you'll learn</summary><ul>
+<li class="grp">Foundations</li>
+<li>Understanding Data &amp; Statistics</li>
+<li>Measures of Central Tendency (Mean, Median, Mode)</li>
+<li>Descriptive vs Inferential Statistics</li>
+<li>Excel Foundations (Formulas &amp; Formatting)</li>
+<li class="grp">Core Analysis &amp; Visualization</li>
+<li>Data Cleaning and Reporting in Excel</li>
+<li>Pivot Tables and Excel Dashboards</li>
+<li>Power BI Data Import and Transformation</li>
+<li>Power BI Visualizations and Interactive Dashboards</li>
+<li class="grp">Advanced &amp; Output</li>
+<li>Analyzing Data with AI (ChatGPT, Copilot)</li>
+<li>Data Storytelling and Reporting</li>
+<li>Presenting Findings to a Non-Technical Audience</li>
+<li>Capstone Project and Portfolio Building</li></ul></details></article>
+
+<article class="course" data-l="i"><span class="tag i">Intermediate</span>
+<h3>Web Development</h3><p class="tools">HTML, CSS, JavaScript, Git</p>
+<p class="out">Build and publish your own personal portfolio website.</p>
+<details><summary>What you'll learn</summary><ul>
+<li>Introduction to Web Development</li>
+<li>Understanding How Websites Work</li>
+<li>Frontend vs Backend Development</li>
+<li>HTML Fundamentals and Page Structure</li>
+<li>CSS Fundamentals and Website Styling</li>
+<li>Creating Responsive Web Designs</li>
+<li>CSS Flexbox and Grid Layout</li>
+<li>Understanding Colors, Fonts, Layouts &amp; Design Principles</li>
+<li>JavaScript Fundamentals</li>
+<li>Adding Interactivity to Websites with JavaScript</li>
+<li>Working with Forms and User Inputs</li>
+<li>Understanding the DOM (Document Object Model)</li>
+<li>Introduction to Git and GitHub</li>
+<li>Debugging and Using Browser Developer Tools</li>
+<li>Building and Publishing a Personal Portfolio Website</li></ul></details></article>
+
+</div></div></section>
+
+<section id="how" class="alt"><div class="wrap">
+<h2 class="c">How it works</h2>
+<p class="lede c">From first click to first client, in three steps.</p>
+<div class="steps">
+<div class="step"><h3>Pick a course, at any level</h3><p>Start with a Beginner friendly program or go straight to Intermediate. Enroll and pay with Paystack or Flutterwave.</p></div>
+<div class="step"><h3>Learn for 4 weeks, build a project</h3><p>Follow lessons and assignments in your student dashboard, with support from our community group on WhatsApp.</p></div>
+<div class="step"><h3>Get certified, start earning</h3><p>Finish with a certificate and a portfolio that proves your skill.</p></div>
+</div></div></section>
+
+<section id="about"><div class="wrap">
+<div class="split">
+<div><h2>Our mission</h2>
+<p>Access to digital and tech skills should not be determined by where someone starts. We equip people, whatever their prior experience, with practical, real-world skills through fast, focused, portfolio-first training.</p>
+<p>We serve total beginners, career changers, students and professionals, with hands-on learning and no intimidating jargon.</p></div>
+<div><h2>Our vision</h2>
+<p class="vision">A future where, across Africa, digital and tech skills are a starting point available to anyone willing to learn.</p>
+<p style="margin-top:16px">Where creativity meets technical excellence.</p></div>
+</div>
+</div></section>
+
+<section id="why" class="alt"><div class="wrap">
+<h2 class="c">Why choose us</h2>
+<p class="lede c">What sets D-High Concept apart.</p>
+<div class="why">
+<div><i><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.4 2.7-6 6-6s6 2.6 6 6"/><circle cx="17" cy="9" r="2.4"/><path d="M16 14.2c2.8 0 5 2 5 5"/></svg></i><h3>Personalized mentorship</h3><p>One-on-one guidance from seasoned industry experts committed to your success.</p></div>
+<div><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4"/><path d="M5 5h12l-2.5 3.5L17 12H5"/></svg></i><h3>Built for every starting point</h3><p>Whether it's your first digital skill or your fifth, we meet you where you are.</p></div>
+<div><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 8l-4 4 4 4"/><path d="M16 8l4 4-4 4"/><path d="M13.5 6l-3 12"/></svg></i><h3>Creative and technical, in one place</h3><p>Graphic design, video editing, AI generation, data analysis and web development. Learn one skill, or grow into several.</p></div>
+<div><i><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/></svg></i><h3>Accessible by design</h3><p>Flexible payment plans, mobile-friendly learning and a scholarship program that removes cost as a barrier.</p></div>
+</div></div></section>
+
+<section id="faq"><div class="wrap">
+<h2 class="c">Frequently asked questions</h2>
+<p class="lede c">Quick answers before you enroll.</p>
+<div class="faq">
+<details><summary>Do I need any experience?</summary><p>No. Our programs are built for every starting point, from total beginners to professionals adding a new skill. Beginner friendly courses are tagged on the page so you know where to start.</p></details>
+<details><summary>How long does a course take?</summary><p>Each course runs for 4 weeks. You learn step by step and build a project along the way.</p></details>
+<details><summary>How much does it cost?</summary><p><strong>Your fee is subsidised.</strong> We are giving out scholarships, so what you pay is a subsidised amount, not the full cost of the training. Flexible payment plans are also available. Message us to get the exact price for your course.</p></details>
+<details><summary>How do I pay?</summary><p>Once you pick a course, you enroll and pay securely through Paystack or Flutterwave.</p></details>
+<details><summary>Can I learn on my phone?</summary><p>Yes. The learning experience is mobile-friendly, and the CapCut course is taught on the CapCut mobile interface.</p></details>
+<details><summary>Will I get a certificate?</summary><p>Yes. You finish with a certificate and a portfolio of your own work as proof of your skill.</p></details>
+<details><summary>Will I get support while I learn?</summary><p>Yes. You get one-on-one guidance from industry experts, plus a community group for support.</p></details>
+</div></div></section>
+
+<section id="enroll" class="enroll"><div class="wrap">
+<h2>Train High. Work Higher.</h2>
+<p>Your next skill is four weeks away. Pick a course and start building.</p>
+<div class="cta"><a class="btn" href="#courses">Start your first course</a></div>
+</div></section>
+</main>
+
+<footer><div class="wrap"><span><b>D-High Concept</b> · Digital skills for everyone</span><span>© 2026 D-High Concept</span></div></footer>
+
+<a class="btn wa float-wa" href="https://wa.me/2348166122682?text=Hello%20D-High%20Concept%2C%20I%27d%20like%20to%20know%20more." target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3s.8-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.7 1.2 1.5 1.9 1 .9 1.9 1.2 2.2 1.3.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.1.1.7-.1 1.4z"/></svg>WhatsApp</a>
+<script>
+(function(){
+var btns=document.querySelectorAll('.tabs button'),cards=document.querySelectorAll('.course');
+btns.forEach(function(b){b.addEventListener('click',function(){
+btns.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+cards.forEach(function(c){c.hidden=b.dataset.f!=='all'&&c.dataset.l!==b.dataset.f});
+})});
+})();
+</script>
+</body>
+</html>
